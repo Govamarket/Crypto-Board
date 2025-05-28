@@ -13,6 +13,7 @@ import Dashboard from "./Pages/Dashboard";
 import Logout from "./Pages/Logout";
 import Logo from "./Pages/Logo";
 import SideBar from "./Components/SideBar";
+import Asset from "./Pages/Asset";
 
 function App() {
   return (
@@ -36,7 +37,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/chart" element={<Chart />} />
           <Route path="/help" element={<Help />} />
-
+          <Route path="/" element={<Asset />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
