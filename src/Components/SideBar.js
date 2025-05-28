@@ -13,9 +13,14 @@ import {
 
 const SideBar = () => {
   return (
-    <div className="block fixed w-64 h-full bg-[#f8f7ff] text-{#ccc} p-4 leading-10">
-      <Logo />
-      <ul>
+    <div className="block fixed w-64 h-full bg-[#f8f7ff] text-{#ccc} p-4  leading-10">
+      <div className="absolute top-1 left-5 mb-4">
+        {" "}
+        <Link to="/">
+          <Logo />
+        </Link>
+      </div>
+      <ul className="mt-10">
         <li className="">
           <Link to="/" className="flex items-center gap-2">
             <House />
