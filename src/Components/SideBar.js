@@ -2,6 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Pages/Logo";
 import Guide from "../Pages/Guide";
+import {
+  House,
+  CassetteTape,
+  ChartNoAxesColumnIncreasing,
+  ClipboardMinus,
+  Settings,
+  FileQuestion,
+} from "lucide-react";
 
 const SideBar = () => {
   return (
@@ -9,22 +17,40 @@ const SideBar = () => {
       <Logo />
       <ul>
         <li className="">
-          <Link to="/">Home</Link>
+          <Link to="/" className="flex items-center gap-2">
+            <House />
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/settings">Asset</Link>
+          <Link to="/settings" className="flex items-center gap-2">
+            <CassetteTape />
+            Asset
+          </Link>
         </li>
         <li>
-          <Link to="/chart">Chart</Link>
+          <Link to="/chart" className="flex items-center gap-2">
+            <ChartNoAxesColumnIncreasing />
+            Chart
+          </Link>
         </li>
         <li>
-          <Link to="/reports">Support</Link>
+          <Link to="/reports" className="flex items-center gap-2">
+            <ClipboardMinus />
+            Support
+          </Link>
         </li>
         <li>
-          <Link to="/help">Reports</Link>
+          <Link to="/help" className="flex items-center gap-2">
+            <FileQuestion />
+            Reports
+          </Link>
         </li>
         <li>
-          <Link to="/about">Settings</Link>
+          <Link to="/about" className="flex items-center gap-2">
+            <Settings />
+            Settings
+          </Link>
         </li>
       </ul>
 
