@@ -1,5 +1,6 @@
 import React from "react";
 import { TrendingUp, Plus } from "lucide-react";
+import TraderProfile from "../Data/TraderProfile";
 
 // ✅ Turn into a proper component
 const AssetCardDetails = ({
@@ -115,6 +116,7 @@ const AssetCard = () => {
           <AssetCardDetails isAddCard={true} />
         </div>
       </div>
+      <TraderProfile />
     </div>
   );
 };

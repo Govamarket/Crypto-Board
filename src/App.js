@@ -4,7 +4,7 @@ import "./App.css";
 import SideBar from "./Components/Layouts/SideBar";
 import Logo from "./Components/Layouts/Logo";
 import Setting from "./Components/Pages/Setting";
-import Profile from "./Components/Data/Profile";
+import TraderProfile from "./Components/Data/TraderProfile";
 import Chart from "./Components/Data/Chart";
 import Help from "./Components/Data/Help";
 import AssetCard from "./Components/Dashboard/AssetCard";
@@ -36,7 +36,7 @@ function App() {
           />
           <Route path="/logo" element={<Logo />} />
           <Route path="/settings" element={<Setting />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/traderprofile" element={<TraderProfile />} />
           <Route path="/chart" element={<Chart />} />
           <Route path="/help" element={<Help />} />
           <Route path="/assets" element={<AssetCard />} />
