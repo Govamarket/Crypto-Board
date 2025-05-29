@@ -1,20 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Home from "./Pages/Home";
-import Setting from "./Pages/Setting";
-import Profile from "./Pages/Profile";
-import Chart from "./Pages/Chart";
-import Help from "./Pages/Help";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
-import Dashboard from "./Pages/Dashboard";
-import Logout from "./Pages/Logout";
-import Logo from "./Pages/Logo";
-import SideBar from "./Components/SideBar";
-import Asset from "./Pages/Asset";
+// import Home from "./Components/Pages/Home";
+import SideBar from "./Components/Layouts/SideBar";
+import Logo from "./Components/Layouts/Logo";
+import Setting from "./Components/Pages/Setting";
+import Profile from "./Components/Data/Profile";
+import Chart from "./Components/Data/Chart";
+import Help from "./Components/Data/Help";
+import AssetCard from "./Components/Dashboard/AssetCard";
+import Guide from "./Components/Pages/Guide";
+import Forum from "./Components/Pages/Forum";
+import Report from "./Components/Pages/Report";
+import LiveTrade from "./Components/Pages/LiveTrade";
 
+import Contact from "./Components/Data/Contact";
+import Login from "./Components/Authentication/Login";
+import Register from "./Components/Authentication/Register";
+import Dashboard from "./Components/Pages/Dashboard";
+import Logout from "./Components/Authentication/Logout";
 function App() {
   return (
     <div>
@@ -23,22 +26,25 @@ function App() {
           <Route
             path="/"
             element={
-              <div className="block md:flex lg:flex h-screen">
+              <div>
                 <SideBar />
-                <div className="content flex-1 p-4">
-                  {/* <h1>Welcome to Crypto Board</h1> */}
+                <div className="ml-64 p-4">
+                  <AssetCard />
                 </div>
               </div>
             }
-          ></Route>
-          <Route path="/" element={<Home />} />
+          />
           <Route path="/logo" element={<Logo />} />
           <Route path="/settings" element={<Setting />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/chart" element={<Chart />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/" element={<Asset />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/assets" element={<AssetCard />} />
+          <Route path="/guide" element={<Guide />} />
+          <Route path="/forum" element={<Forum />} />
+          <Route path="/report" element={<Report />} />
+          <Route path="/live-trade" element={<LiveTrade />} />
+
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
