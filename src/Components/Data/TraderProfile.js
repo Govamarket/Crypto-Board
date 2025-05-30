@@ -1,57 +1,39 @@
 import React from "react";
 
 const TraderProfile = ({
-  name = "",
-  joinDate = "",
-  assetsTotal = 0,
+  name = "Han Ji Pyeong",
+  joinDate = "June 15, 2023",
+  assetsTotal = "$1,312,456",
   onEdit,
   avatarInitials = "",
 }) => {
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold text-gray-800">Trader Profile</h1>
-        {onEdit && (
+      <div className="p-4 bg-white shadow rounded-lg">
+        <div className="w-20 h-20 bg-gray-200 rounded-full text-2xl font-bold text-gray-600 m-4">
+          {avatarInitials}
+        </div>
+        <div className="">
+          <h2 className="text-sm font-semibold">{name}</h2>
           <button
             onClick={onEdit}
-            className="px-4 py-2 text-sm text-blue-600 font-semibold rounded-full border border-blue-600 hover:bg-blue-50 transition-colors"
+            className="ml-auto px-4 py-2  text-blue-500  transition"
           >
             Edit Profile
           </button>
-        )}
-      </div>
-
-      <div className="flex items-center space-x-4 mb-8">
-        <div className="flex-shrink-0">
-          <div className="h-16 w-16 rounded-full bg-gray-300 flex items-center justify-center text-2xl font-bold text-gray-600">
-            {avatarInitials ||
-              (name
-                ? name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")
-                : "")}
-          </div>
         </div>
+
         <div>
-          <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
-        </div>
-      </div>
-
-      <div className="space-y-4">
-        <div className="border-t border-gray-200 pt-4">
-          <h3 className="text-lg font-medium text-gray-500 mb-2">Account</h3>
-          <div className="space-y-3">
-            <div>
-              <p className="text-sm font-medium text-gray-500">Joined</p>
-              <p className="text-base font-normal text-gray-800">{joinDate}</p>
-            </div>
-            <div>
-              <p className="text-sm font-medium text-gray-500">Assets Total</p>
-              <p className="text-2xl font-bold text-gray-800">
-                ${assetsTotal.toLocaleString()}
-              </p>
-            </div>
+          <div>
+            <h1 className="font-semibold text-xl"> Account</h1>
+          </div>
+          <div className="flex flex-col space-y-6 mt-2">
+            <p className="text-sm text-gray-500 font-semibold">
+              Joined: {joinDate}
+            </p>
+            <p className="text-sm font-semibold text-gray-500">
+              Total Assets: ${assetsTotal.toLocaleString()}
+            </p>
           </div>
         </div>
       </div>
