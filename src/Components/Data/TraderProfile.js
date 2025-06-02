@@ -1,4 +1,5 @@
 import React from "react";
+import AssetSummary from "../Dashboard/AssetSummary";
 
 const TraderProfile = ({
   name = "Han Ji Pyeong",
@@ -8,34 +9,37 @@ const TraderProfile = ({
   avatarInitials = "",
 }) => {
   return (
-    <div>
-      <div className="p-4 bg-white shadow rounded-lg">
-        <div className="w-20 h-20 bg-gray-200 rounded-full text-2xl font-bold text-gray-600 m-4">
+    <div className="p-6 bg-white shadow rounded-lg w-full max-w-md mx-auto">
+      {/* Avatar + Name + Edit centered */}
+      <div className="flex flex-col items-center mb-6">
+        <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold text-gray-600 mb-2">
           {avatarInitials}
         </div>
-        <div className="">
-          <h2 className="text-sm font-semibold">{name}</h2>
-          <button
-            onClick={onEdit}
-            className="ml-auto px-4 py-2  text-blue-500  transition"
-          >
-            Edit Profile
-          </button>
-        </div>
+        <h2 className="text-lg font-semibold">{name}</h2>
+        <button
+          onClick={onEdit}
+          className="mt-2 px-4 py-1 text-sm text-blue-500 border border-blue-500 rounded hover:bg-blue-50 transition"
+        >
+          Edit Profile
+        </button>
+      </div>
 
-        <div>
-          <div>
-            <h1 className="font-semibold text-xl"> Account</h1>
+      {/* Account Info */}
+      <div>
+        <h3 className="font-semibold text-xl mb-3">Account</h3>
+        <div className="space-y-2 text-sm text-gray-600">
+          <div className="flex justify-between">
+            <span className="font-semibold">Joined:</span>
+            <span>{joinDate}</span>
           </div>
-          <div className="flex flex-col space-y-6 mt-2">
-            <p className="text-sm text-gray-500 font-semibold">
-              Joined: {joinDate}
-            </p>
-            <p className="text-sm font-semibold text-gray-500">
-              Total Assets: ${assetsTotal.toLocaleString()}
-            </p>
+          <div className="flex justify-between">
+            <span className="font-semibold">Total Asset:</span>
+            <span>{assetsTotal}</span>
           </div>
         </div>
+      </div>
+      <div className="mt-6 flex flex-col items-center">
+        <AssetSummary />
       </div>
     </div>
   );
