@@ -10,32 +10,107 @@ import Guide from "./Components/Pages/Guide";
 import Forum from "./Components/Pages/Forum";
 import Report from "./Components/Pages/Report";
 import LiveTrade from "./Components/Pages/LiveTrade";
-
 import Contact from "./Components/Data/Contact";
 import Login from "./Components/Authentication/Login";
 import Register from "./Components/Authentication/Register";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Logout from "./Components/Authentication/Logout";
+
 function App() {
   return (
     <Router>
       <Routes>
-        {/* Main Dashboard Layout  ==> Dashboard-protected routes*/}
-        <Route element={<Dashboard />}>
-          <Route path="/logo" element={<Logo />} />
-          <Route index element={<AssetCard />} />
-          <Route path="/settings" element={<Setting />} />
-          <Route path="/traderprofile" element={<TraderProfile />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/help" element={<Help />} />
-          <Route path="/assets" element={<AssetCard />} />
-          <Route path="/guide" element={<Guide />} />
-          <Route path="/forum" element={<Forum />} />
-          <Route path="/report" element={<Report />} />
-          <Route path="/live-trade" element={<LiveTrade />} />
-        </Route>
+        {/* Dashboard Routes with Explicit Children */}
+        <Route
+          path="/logo"
+          element={
+            <Dashboard>
+              <Logo />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <Dashboard>
+              <AssetCard />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <Dashboard>
+              <Setting />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/traderprofile"
+          element={
+            <Dashboard>
+              <TraderProfile />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/chart"
+          element={
+            <Dashboard>
+              <Chart />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/help"
+          element={
+            <Dashboard>
+              <Help />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/assets"
+          element={
+            <Dashboard>
+              <AssetCard />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/guide"
+          element={
+            <Dashboard>
+              <Guide />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/forum"
+          element={
+            <Dashboard>
+              <Forum />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/report"
+          element={
+            <Dashboard>
+              <Report />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/live-trade"
+          element={
+            <Dashboard>
+              <LiveTrade />
+            </Dashboard>
+          }
+        />
 
-        {/* Public Routes  No Dashboard*/}
+        {/* Public Routes (No Dashboard) */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

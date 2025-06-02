@@ -1,5 +1,4 @@
 import React from "react";
-import AssetSummary from "../Dashboard/AssetSummary";
 
 const TraderProfile = ({
   name = "Han Ji Pyeong",
@@ -37,9 +36,6 @@ const TraderProfile = ({
             <span>{assetsTotal}</span>
           </div>
         </div>
-      </div>
-      <div className="mt-6 flex flex-col items-center">
-        <AssetSummary />
       </div>
     </div>
   );

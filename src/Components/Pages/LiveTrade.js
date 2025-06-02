@@ -3,7 +3,7 @@ import AssetSummary from "../Dashboard/AssetSummary";
 
 const LiveTrade = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center h-screen">
       <AssetSummary />
     </div>
   );
