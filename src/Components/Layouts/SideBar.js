@@ -29,7 +29,7 @@ const SideBar = () => {
           </Link>
         </li>
         <li>
-          <Link to="assets" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <CassetteTape size={20} />
             Asset
           </Link>

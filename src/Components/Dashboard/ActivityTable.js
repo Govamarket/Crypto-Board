@@ -1,10 +1,11 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import pic from "../../Asset/pic.png"; // Ensure this is the correct path to your icon
+// import pic from "../../Asset/pic.png";
+import ProfilePic from "../../Asset/meta.jpg";
 
 const transactions = [
   {
-    icon: pic,
+    icon: ProfilePic,
     title: "Ethereum Purchased",
     amount: "0.0154 ETH",
     total: "USD $10",
@@ -12,7 +13,7 @@ const transactions = [
     date: "February 21, 2021",
   },
   {
-    icon: pic,
+    icon: ProfilePic,
     title: "Bitcoin Purchased",
     amount: "0.3 BTC",
     total: "USD $140",
@@ -20,7 +21,7 @@ const transactions = [
     date: "February 14, 2021",
   },
   {
-    icon: pic,
+    icon: ProfilePic,
     title: "Bitcoin Purchased",
     amount: "0.025 BTC",
     total: "USD $56",

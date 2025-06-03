@@ -1,19 +1,32 @@
 import React from "react";
+// import ProfilePic from "../../Asset/meta.jpg";
+import pic from "../../Asset/pic.png";
 
 const TraderProfile = ({
   name = "Han Ji Pyeong",
   joinDate = "June 15, 2023",
   assetsTotal = "$1,312,456",
   onEdit,
-  avatarInitials = "",
+  avatarImage = pic,
+  avatarInitials = "HJ", // Just initials
 }) => {
   return (
     <div className="p-6 bg-white shadow rounded-lg w-full max-w-md mx-auto">
-      {/* Avatar + Name + Edit centered */}
       <div className="flex flex-col items-center mb-6">
-        <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold text-gray-600 mb-2">
-          {avatarInitials}
-        </div>
+        {avatarImage ? (
+          <div className="w-20 h-20 rounded-full overflow-hidden mb-2">
+            <img
+              src={avatarImage}
+              alt="Trader Avatar"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        ) : (
+          <div className="w-20 h-20 bg-gray-200 rounded-full flex items-center justify-center text-2xl font-bold text-gray-600 mb-2">
+            {avatarInitials}
+          </div>
+        )}
+
         <h2 className="text-lg font-semibold">{name}</h2>
         <button
           onClick={onEdit}
