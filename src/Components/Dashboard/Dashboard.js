@@ -10,7 +10,7 @@ const Dashboard = ({ children }) => {
       <SideBar />
 
       {/* Main Content Area */}
-      <div className="flex-1 p-6 ml-16">
+      <div className="flex-1 p-6 ml-64">
         {/* Asset Cards (children) */}
         {children}
 

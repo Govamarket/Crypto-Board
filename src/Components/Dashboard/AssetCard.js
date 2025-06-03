@@ -69,9 +69,9 @@ const AssetCardDetails = ({
 const AssetCard = () => {
   return (
     <div>
-      <div className="max-w-7xl mx-auto">
+      <div className="min-w-2xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-0">
           <div className="flex items-center text-sm text-gray-500 mb-4">
             <span>Dashboard/</span>
             <span className="mx-2"></span>

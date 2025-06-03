@@ -6,10 +6,10 @@ const AssetSummary = () => {
   return (
     <div className="w-64 p-4 bg-white rounded-lg shadow-md text-sm font-medium text-gray-800">
       {/* Trader Profile Section */}
-      <h3 className="text-lg font-semibold text-gray-900 mb-2">
+      <h3 className="flex justify-center text-lg font-semibold text-gray-900 mb-2">
         Trader Profile
       </h3>
-      <div className="flex items-center mb-4">
+      <div className="grid grid-cols-1 place-items-center mb-4 space-y-1 place-content-center">
         <img
           // src={profilePic}
           alt="Trader"
@@ -21,11 +21,10 @@ const AssetSummary = () => {
             Joined <span className="text-gray-700">June 22, 2020</span>
           </p>
         </div>
-      </div>
-
-      {/* Edit Profile Link */}
-      <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
-        Edit Profile
+        {/* Edit Profile Link */}
+        <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
+          Edit Profile
+        </div>
       </div>
 
       {/* Total Assets */}
@@ -36,42 +35,44 @@ const AssetSummary = () => {
       </div>
 
       {/* Assets List */}
-      <h3 className="text-xs text-purple-500 font-semibold mb-3">Assets</h3>
-      <div className="space-y-2 mb-4">
-        <div className="flex justify-between">
-          <span>Bitcoin</span>
-          <span className="text-gray-500">
-            23.5 <span className="text-xs">BTC</span>
-          </span>
+      <div className="absolute bottom-0">
+        <h3 className="text-xs text-purple-500 font-semibold mb-3">Assets</h3>
+        <div className="space-y-4 mb-4">
+          <div className="flex justify-between">
+            <span>Bitcoin</span>
+            <span className="text-gray-500">
+              23.5 <span className="text-xs">BTC</span>
+            </span>
+          </div>
+          <div className="flex space-x-20 justify-between">
+            <span>Ethereum</span>
+            <span className="text-gray-500">
+              190.45 <span className="text-xs">ETH</span>
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>Doge</span>
+            <span className="text-gray-500">
+              239,500 <span className="text-xs">DOGE</span>
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span>Ripple</span>
+            <span className="text-gray-500">
+              65,100 <span className="text-xs">XRP</span>
+            </span>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <span>Ethereum</span>
-          <span className="text-gray-500">
-            190.45 <span className="text-xs">ETH</span>
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span>Doge</span>
-          <span className="text-gray-500">
-            239,500 <span className="text-xs">DOGE</span>
-          </span>
-        </div>
-        <div className="flex justify-between">
-          <span>Ripple</span>
-          <span className="text-gray-500">
-            65,100 <span className="text-xs">XRP</span>
-          </span>
-        </div>
-      </div>
 
-      <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
-        More assets...
-      </div>
+        <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
+          More assets...
+        </div>
 
-      <button className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition">
-        <ArrowLeftRight size={16} />
-        Trade Now
-      </button>
+        <button className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition">
+          <ArrowLeftRight size={16} />
+          Trade Now
+        </button>
+      </div>
     </div>
   );
 };
