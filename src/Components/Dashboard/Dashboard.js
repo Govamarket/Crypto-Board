@@ -9,8 +9,8 @@ const Dashboard = ({ children }) => {
   const forumPath = location.pathname == "/forum";
   const reportPath = location.pathname === "/report";
   const settingsPath = location.pathname === "/settings";
-
-  if (liveTradePath || forumPath || reportPath || settingsPath) {
+  const assetsPath = location.pathname === "/assets";
+  if (liveTradePath || forumPath || reportPath || settingsPath || assetsPath) {
     return (
       <div className="flex min-h-screen bg-gray-50">
         {/* Sidebar */}

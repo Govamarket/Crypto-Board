@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Layouts/Logo";
 import Guide from "../Pages/Guide";
@@ -29,7 +28,7 @@ const SideBar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/assets" className="flex items-center gap-2">
             <CassetteTape size={20} />
             Asset
           </Link>

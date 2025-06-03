@@ -15,6 +15,7 @@ import Login from "./Components/Authentication/Login";
 import Register from "./Components/Authentication/Register";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import Logout from "./Components/Authentication/Logout";
+import Asset from "./Components/Pages/Asset";
 
 function App() {
   return (
@@ -34,6 +35,14 @@ function App() {
           element={
             <Dashboard>
               <AssetCard />
+            </Dashboard>
+          }
+        />
+        <Route
+          path="/assets"
+          element={
+            <Dashboard>
+              <Asset />
             </Dashboard>
           }
         />

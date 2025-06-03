@@ -1,8 +1,18 @@
-import React from "react";
+import React, { use } from "react";
 import { ArrowLeftRight } from "lucide-react";
+import { useLocation } from "react-router-dom";
 // import profilePic from "../../Asset/profile-pic.jpg"; // Add the correct path to the profile image
 
 const AssetSummary = () => {
+  const location = useLocation();
+  const liveTradePath = location.pathname === "/live-trade";
+  const forumPath = location.pathname === "/forum";
+  const reportPath = location.pathname === "/report";
+  const settingsPath = location.pathname === "/settings";
+  const assetsPath = location.pathname === "/assets";
+  if (liveTradePath || forumPath || reportPath || settingsPath || assetsPath) {
+    return null; // Do not render AssetSummary in these paths
+  }
   return (
     <div className="w-64 p-4 bg-white rounded-lg shadow-md text-sm font-medium text-gray-800">
       {/* Trader Profile Section */}

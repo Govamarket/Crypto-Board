@@ -11,7 +11,7 @@ const TraderProfile = ({
   avatarInitials = "HJ", // Just initials
 }) => {
   return (
-    <div className="p-6 bg-white shadow rounded-lg w-full max-w-md mx-auto">
+    <div className="p-4 bg-white shadow rounded-lg w-full max-w-md mx-auto">
       <div className="flex flex-col items-center mb-6">
         {avatarImage ? (
           <div className="w-20 h-20 rounded-full overflow-hidden mb-2">
