@@ -1,11 +1,11 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 // import pic from "../../Asset/pic.png";
-import ProfilePic from "../../Asset/meta.jpg";
+// import ProfilePic from "../../Asset/meta.jpg";
 
 const transactions = [
   {
-    icon: ProfilePic,
+    icon: "ETH",
     title: "Ethereum Purchased",
     amount: "0.0154 ETH",
     total: "USD $10",
@@ -13,7 +13,7 @@ const transactions = [
     date: "February 21, 2021",
   },
   {
-    icon: ProfilePic,
+    icon: "BTC",
     title: "Bitcoin Purchased",
     amount: "0.3 BTC",
     total: "USD $140",
@@ -21,7 +21,7 @@ const transactions = [
     date: "February 14, 2021",
   },
   {
-    icon: ProfilePic,
+    icon: "BTC",
     title: "Bitcoin Purchased",
     amount: "0.025 BTC",
     total: "USD $56",
@@ -58,11 +58,9 @@ const ActivityTable = () => {
                 className="bg-purple-50 border-b border-purple-100 hover:bg-purple-100 transition-colors"
               >
                 <td className="flex items-center gap-2 px-4 py-3">
-                  <img
-                    src={tx.icon}
-                    alt="icon"
-                    className="w-6 h-6 rounded-full"
-                  />
+                  <span className="text-purple-600 font-semibold">
+                    {tx.icon}
+                  </span>
                   <span className="text-gray-800">{tx.title}</span>
                 </td>
                 <td className="px-4 py-3 text-gray-600">{tx.amount}</td>
