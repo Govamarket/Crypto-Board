@@ -23,18 +23,18 @@ const Setting = () => {
               <label className="text-sm text-gray-500">Username</label>
               <input
                 type="text"
-                value="CryptoWizard"
+                placeholder="CryptoWizard"
                 className="w-full p-2 mt-1 border rounded-md bg-gray-50"
-                disabled
+                // disabled
               />
             </div>
             <div>
               <label className="text-sm text-gray-500">Email</label>
               <input
                 type="email"
-                value="crypto@wizard.com"
+                placeholder="crypto@wizard.com"
                 className="w-full p-2 mt-1 border rounded-md bg-gray-50"
-                disabled
+                // disabled
               />
             </div>
           </div>
