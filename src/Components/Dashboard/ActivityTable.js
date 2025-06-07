@@ -35,14 +35,14 @@ const ActivityTable = () => {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-semibold text-gray-800">ACTIVITY</h2>
-        <div className="text-sm text-purple-600 hover:underline cursor-pointer flex items-center gap-1">
+        <div className="text-sm text-blue-600 hover:underline cursor-pointer flex items-center gap-1">
           More Activity <ArrowRight size={14} />
         </div>
       </div>
 
       <div className="p-0 overflow-hidden rounded-lg shadow-md">
         <table className="w-full text-sm text-left">
-          <thead className="bg-purple-500 text-white">
+          <thead className="bg-blue-600 text-white">
             <tr>
               <th className="px-4 py-3 rounded-tl-lg">Transactions</th>
               <th className="px-4 py-3">Amount</th>
@@ -58,7 +58,7 @@ const ActivityTable = () => {
                 className="bg-purple-50 border-b border-purple-100 hover:bg-purple-100 transition-colors"
               >
                 <td className="flex items-center gap-2 px-4 py-3">
-                  <span className="text-purple-600 font-semibold">
+                  <span className="text-black-600 font-semibold">
                     {tx.icon}
                   </span>
                   <span className="text-gray-800">{tx.title}</span>
@@ -67,9 +67,7 @@ const ActivityTable = () => {
                 <td className="px-4 py-3 text-gray-600">{tx.total}</td>
                 <td
                   className={`px-4 py-3 ${
-                    tx.status === "Pending"
-                      ? "text-purple-600"
-                      : "text-green-600"
+                    tx.status === "Pending" ? "text-blue-500" : "text-green-600"
                   }`}
                 >
                   {tx.status}

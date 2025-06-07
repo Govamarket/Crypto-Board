@@ -32,7 +32,7 @@ const AssetSummary = () => {
           </p>
         </div>
         {/* Edit Profile Link */}
-        <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
+        <div className="text-xs text-blue-600 cursor-pointer mb-4 hover:underline">
           Edit Profile
         </div>
       </div>
@@ -45,8 +45,8 @@ const AssetSummary = () => {
       </div>
 
       {/* Assets List */}
-      <div className="absolute bottom-0">
-        <h3 className="text-xs text-purple-500 font-semibold mb-3">Assets</h3>
+      <div className="absolute bottom-0 p-2">
+        <h3 className="text-xs text-blue-600 font-semibold mb-3">Assets</h3>
         <div className="space-y-4 mb-4">
           <div className="flex justify-between">
             <span>Bitcoin</span>
@@ -74,11 +74,11 @@ const AssetSummary = () => {
           </div>
         </div>
 
-        <div className="text-xs text-purple-600 cursor-pointer mb-4 hover:underline">
+        <div className="text-xs text-blue-600 cursor-pointer mb-4 hover:underline">
           More assets...
         </div>
 
-        <button className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-md transition">
+        <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition bottom-2">
           <ArrowLeftRight size={16} />
           Trade Now
         </button>

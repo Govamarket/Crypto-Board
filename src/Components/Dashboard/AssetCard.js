@@ -80,7 +80,7 @@ const AssetCard = () => {
 
           <div className="flex items-center justify-between">
             <h1 className="text-2xl font-bold text-gray-900">ASSETS</h1>
-            <button className="text-purple-600 hover:text-purple-700 font-medium text-sm flex items-center">
+            <button className="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
               More Assets
               <span className="ml-2">→</span>
             </button>
@@ -95,7 +95,7 @@ const AssetCard = () => {
             profit="2.9%"
             loss="0.7%"
             neutral="2.9%"
-            bgColor="bg-gradient-to-br from-purple-500 to-purple-600"
+            bgColor="bg-gradient-to-br from-purple-500 to-blue-600"
           />
           <AssetCardDetails
             title="Ethereum"
