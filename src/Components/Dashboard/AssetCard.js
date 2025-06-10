@@ -1,4 +1,5 @@
 import { TrendingUp, Plus } from "lucide-react";
+import { useDarkMode } from "../ActivityModals/DarkModeContext";
 
 const AssetCardDetails = ({
   title,
@@ -11,13 +12,35 @@ const AssetCardDetails = ({
   textColor = "text-white",
   isAddCard = false,
 }) => {
+  const { darkMode } = useDarkMode(); // Use dark mode context
+
   if (isAddCard) {
     return (
-      <div className="bg-gray-50 rounded-2xl p-6 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed border-gray-300 hover:border-gray-400 transition-colors cursor-pointer">
-        <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mb-3">
-          <Plus className="w-6 h-6 text-gray-500" />
+      <div
+        className={`rounded-2xl p-6 flex flex-col items-center justify-center min-h-[200px] border-2 border-dashed transition-colors cursor-pointer ${
+          darkMode
+            ? "bg-[#2a2a2a] border-gray-600 hover:border-gray-500"
+            : "bg-gray-50 border-gray-300 hover:border-gray-400"
+        }`}
+      >
+        <div
+          className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${
+            darkMode ? "bg-gray-600" : "bg-gray-200"
+          }`}
+        >
+          <Plus
+            className={`w-6 h-6 ${
+              darkMode ? "text-gray-300" : "text-gray-500"
+            }`}
+          />
         </div>
-        <span className="text-gray-600 font-medium">New Asset</span>
+        <span
+          className={`font-medium ${
+            darkMode ? "text-gray-300" : "text-gray-600"
+          }`}
+        >
+          New Asset
+        </span>
       </div>
     );
   }
@@ -67,19 +90,30 @@ const AssetCardDetails = ({
 };
 
 const AssetCard = () => {
+  const { darkMode } = useDarkMode();
+
   return (
     <div>
       <div className="min-w-2xl mx-auto">
         {/* Header */}
         <div className="mb-0">
-          <div className="flex items-center text-sm text-gray-500 mb-4">
-            <span>Dashboard/</span>
-            <span className="mx-2"></span>
+          <div
+            className={`flex items-center text-sm mb-4 ${
+              darkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            <span>Dashboard</span>/<span className="mx-2"></span>
             <span>Home</span>
           </div>
 
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-gray-900">ASSETS</h1>
+            <h1
+              className={`text-2xl font-bold ${
+                darkMode ? "text-white" : "text-gray-900"
+              }`}
+            >
+              ASSETS
+            </h1>
             <button className="text-blue-500 hover:text-blue-700 font-medium text-sm flex items-center">
               More Assets
               <span className="ml-2">→</span>

@@ -1,9 +1,21 @@
 import React from "react";
-import { User, Bell, Lock, Moon, Sun } from "lucide-react";
+import { User, Bell, Lock, Sun } from "lucide-react";
+import { useDarkMode } from "../ActivityModals/DarkModeContext";
 
 const Setting = () => {
-  const [theme, setTheme] = React.useState("light");
   const [notifications, setNotifications] = React.useState(true);
+  const { darkMode, toggleDarkMode } = useDarkMode();
+
+  // Handler for dropdown to set theme directly
+  const handleThemeChange = (e) => {
+    const selectedTheme = e.target.value;
+    if (selectedTheme === "dark" && !darkMode) {
+      toggleDarkMode();
+    }
+    if (selectedTheme === "light" && darkMode) {
+      toggleDarkMode();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
@@ -25,7 +37,6 @@ const Setting = () => {
                 type="text"
                 placeholder="CryptoWizard"
                 className="w-full p-2 mt-1 border rounded-md bg-gray-50"
-                // disabled
               />
             </div>
             <div>
@@ -34,7 +45,6 @@ const Setting = () => {
                 type="email"
                 placeholder="crypto@wizard.com"
                 className="w-full p-2 mt-1 border rounded-md bg-gray-50"
-                // disabled
               />
             </div>
           </div>
@@ -66,8 +76,8 @@ const Setting = () => {
               Theme Mode
             </label>
             <select
-              value={theme}
-              onChange={(e) => setTheme(e.target.value)}
+              value={darkMode ? "dark" : "light"}
+              onChange={handleThemeChange}
               className="w-full border p-2 rounded-md"
             >
               <option value="light">Light</option>

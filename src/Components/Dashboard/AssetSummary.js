@@ -1,22 +1,33 @@
-import React, { use } from "react";
+import React from "react";
 import { ArrowLeftRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
-// import profilePic from "../../Asset/profile-pic.jpg"; // Add the correct path to the profile image
+import { useDarkMode } from "../ActivityModals/DarkModeContext"; // Import the dark mode context
 
 const AssetSummary = () => {
+  const { darkMode } = useDarkMode(); // Use the dark mode context
   const location = useLocation();
   const liveTradePath = location.pathname === "/live-trade";
   const forumPath = location.pathname === "/forum";
   const reportPath = location.pathname === "/report";
   const settingsPath = location.pathname === "/settings";
   const assetsPath = location.pathname === "/assets";
+
   if (liveTradePath || forumPath || reportPath || settingsPath || assetsPath) {
     return null; // Do not render AssetSummary in these paths
   }
+
   return (
-    <div className="w-64 p-4 bg-white rounded-lg shadow-md text-sm font-medium text-gray-800">
+    <div
+      className={`w-64 p-4 rounded-lg shadow-md text-sm font-medium transition-colors duration-200 ${
+        darkMode ? "bg-[#232323] text-white" : "bg-white text-gray-800"
+      }`}
+    >
       {/* Trader Profile Section */}
-      <h3 className="flex justify-center text-lg font-semibold text-gray-900 mb-2">
+      <h3
+        className={`flex justify-center text-lg font-semibold mb-2 ${
+          darkMode ? "text-white" : "text-gray-900"
+        }`}
+      >
         Trader Profile
       </h3>
       <div className="grid grid-cols-1 place-items-center mb-4 space-y-1 place-content-center">
@@ -26,9 +37,22 @@ const AssetSummary = () => {
           className="w-12 h-12 rounded-full mr-3"
         />
         <div>
-          <p className="text-gray-800 font-medium">Han Ji Pyeong</p>
-          <p className="text-xs text-gray-500">
-            Joined <span className="text-gray-700">June 22, 2020</span>
+          <p
+            className={`font-medium ${
+              darkMode ? "text-white" : "text-gray-800"
+            }`}
+          >
+            Han Ji Pyeong
+          </p>
+          <p
+            className={`text-xs ${
+              darkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            Joined{" "}
+            <span className={darkMode ? "text-gray-300" : "text-gray-700"}>
+              June 22, 2020
+            </span>
           </p>
         </div>
         {/* Edit Profile Link */}
@@ -39,9 +63,23 @@ const AssetSummary = () => {
 
       {/* Total Assets */}
       <div className="mb-4">
-        <p className="text-xs text-gray-400">Accounts</p>
-        <p className="text-gray-800 font-medium">Joined</p>
-        <p className="text-lg font-bold text-gray-900">$312,800</p>
+        <p
+          className={`text-xs ${darkMode ? "text-gray-500" : "text-gray-400"}`}
+        >
+          Accounts
+        </p>
+        <p
+          className={`font-medium ${darkMode ? "text-white" : "text-gray-800"}`}
+        >
+          Joined
+        </p>
+        <p
+          className={`text-lg font-bold ${
+            darkMode ? "text-white" : "text-gray-900"
+          }`}
+        >
+          $312,800
+        </p>
       </div>
 
       {/* Assets List */}
@@ -49,26 +87,34 @@ const AssetSummary = () => {
         <h3 className="text-xs text-blue-600 font-semibold mb-3">Assets</h3>
         <div className="space-y-4 mb-4">
           <div className="flex justify-between">
-            <span>Bitcoin</span>
-            <span className="text-gray-500">
+            <span className={darkMode ? "text-white" : "text-gray-800"}>
+              Bitcoin
+            </span>
+            <span className={darkMode ? "text-gray-400" : "text-gray-500"}>
               23.5 <span className="text-xs">BTC</span>
             </span>
           </div>
           <div className="flex space-x-20 justify-between">
-            <span>Ethereum</span>
-            <span className="text-gray-500">
+            <span className={darkMode ? "text-white" : "text-gray-800"}>
+              Ethereum
+            </span>
+            <span className={darkMode ? "text-gray-400" : "text-gray-500"}>
               190.45 <span className="text-xs">ETH</span>
             </span>
           </div>
           <div className="flex justify-between">
-            <span>Doge</span>
-            <span className="text-gray-500">
+            <span className={darkMode ? "text-white" : "text-gray-800"}>
+              Doge
+            </span>
+            <span className={darkMode ? "text-gray-400" : "text-gray-500"}>
               239,500 <span className="text-xs">DOGE</span>
             </span>
           </div>
           <div className="flex justify-between">
-            <span>Ripple</span>
-            <span className="text-gray-500">
+            <span className={darkMode ? "text-white" : "text-gray-800"}>
+              Ripple
+            </span>
+            <span className={darkMode ? "text-gray-400" : "text-gray-500"}>
               65,100 <span className="text-xs">XRP</span>
             </span>
           </div>
