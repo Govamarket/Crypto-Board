@@ -2,8 +2,17 @@ import React from "react";
 import { ArrowLeftRight } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import { useDarkMode } from "../ActivityModals/DarkModeContext"; // Import the dark mode context
+import profilePic from "../../Asset/meta.jpg"; // Import the profile picture
 
 const AssetSummary = () => {
+  const TraderProfile = [
+    {
+      profilePic: profilePic,
+      name: "Clinton Chidera",
+      joinDate: "June 22, 2020",
+      assetsTotal: "$312,800",
+    },
+  ];
   const { darkMode } = useDarkMode(); // Use the dark mode context
   const location = useLocation();
   const liveTradePath = location.pathname === "/live-trade";
@@ -31,28 +40,35 @@ const AssetSummary = () => {
         Trader Profile
       </h3>
       <div className="grid grid-cols-1 place-items-center mb-4 space-y-1 place-content-center">
-        <img
-          // src={profilePic}
-          alt="Trader"
-          className="w-12 h-12 rounded-full mr-3"
-        />
         <div>
-          <p
-            className={`font-medium ${
-              darkMode ? "text-white" : "text-gray-800"
+          {/* Trader Name and Details */}
+          <div className="flex flex-col items-center mb-2">
+            <img
+              src={TraderProfile[0].profilePic}
+              alt="Trader Profile"
+              className="w-20 h-20 rounded-full mb-2"
+            />
+          </div>
+          <h4
+            className={`text-sm font-semibold ${
+              darkMode ? "text-white" : "text-gray-900"
             }`}
           >
-            Han Ji Pyeong
+            {TraderProfile[0].name}
+          </h4>
+          <p
+            className={`text-xs ${
+              darkMode ? "text-gray-500" : "text-gray-400"
+            }`}
+          >
+            Joined: {TraderProfile[0].joinDate}
           </p>
           <p
             className={`text-xs ${
-              darkMode ? "text-gray-400" : "text-gray-500"
+              darkMode ? "text-gray-500" : "text-gray-400"
             }`}
           >
-            Joined{" "}
-            <span className={darkMode ? "text-gray-300" : "text-gray-700"}>
-              June 22, 2020
-            </span>
+            Total Assets: {TraderProfile[0].assetsTotal}
           </p>
         </div>
         {/* Edit Profile Link */}

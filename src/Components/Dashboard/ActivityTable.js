@@ -47,7 +47,7 @@ const ActivityTable = () => {
         </div>
       </div>
 
-      <div className="p-0 overflow-hidden rounded-lg shadow-md">
+      <div className="p-0 overflow-auto rounded-lg shadow-md">
         <table className="w-full text-sm text-left">
           <thead className="bg-blue-600 text-white">
             <tr>

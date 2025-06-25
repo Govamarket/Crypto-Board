@@ -1,12 +1,19 @@
 import React from "react";
+import imagePic from "../../Asset/meta.jpg";
 
 const RightSideBar = () => {
+  const imageData = [
+    {
+      metaData: imagePic,
+    },
+  ];
+
   return (
     <div className="w-80 p-6 bg-white shadow-lg rounded-xl text-center space-y-6">
       {/* Profile Picture and Name */}
       <div>
         <img
-          src="https://via.placeholder.com/80"
+          src={metaData}
           alt="Profile"
           className="w-20 h-20 mx-auto rounded-full object-cover"
         />
