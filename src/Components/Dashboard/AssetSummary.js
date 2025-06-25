@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowLeftRight } from "lucide-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useDarkMode } from "../ActivityModals/DarkModeContext"; // Import the dark mode context
 import profilePic from "../../Asset/meta.jpg"; // Import the profile picture
 
@@ -139,11 +139,12 @@ const AssetSummary = () => {
         <div className="text-xs text-blue-600 cursor-pointer mb-4 hover:underline">
           More assets...
         </div>
-
-        <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition bottom-2">
-          <ArrowLeftRight size={16} />
-          Trade Now
-        </button>
+        <Link to="/live-trade">
+          <button className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-md transition bottom-2">
+            <ArrowLeftRight size={16} />
+            Trade Now
+          </button>
+        </Link>
       </div>
     </div>
   );
