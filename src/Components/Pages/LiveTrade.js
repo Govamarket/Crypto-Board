@@ -69,11 +69,6 @@ const LiveTrade = () => {
             </form>
           </div>
         </div>
-
-        {/* Asset Summary or Open Trades */}
-        <div className="mt-10">
-          <AssetSummary />
-        </div>
       </div>
     </div>
   );
